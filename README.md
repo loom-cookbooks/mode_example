@@ -1,8 +1,16 @@
 # mode_example
 
-This cookbook exists to show Chef users how to use `mode` in their resources. It is a really long-winded way to show that there are a few different ways to pass a `mode` parameter value to a resource.
+This cookbook exists to show Chef users how to use `mode` in their resources. This is just a really long-winded way to show that there are a few different ways to pass a `mode` parameter value to a resource.
 
-This cookbook doesn't do anything, it just has test suites and a text fixture cookbook.
+This cookbook doesn't do anything, it just has unit and integration tests, and a text fixture cookbook.
+
+## Supported Platforms
+
+Platform | Version
+---------|----------
+ubuntu   | 14.04
+centos   | 6.7
+centos   | 7.1
 
 ## Overview
 
@@ -33,6 +41,14 @@ Notice that `0644` and `0o644` are ways to write *octal* numbers in Ruby. This m
 
 The Chef resource documentation pages don't have a lot of examples to show how to use both Integer or String values with `mode`, so I wrote some tests really quickly to help you understand how to avoid using leading zeroes the wrong way, and to show some examples of how to use special modes (4-digit modes) correctly with String and Integer values.
 
+## Unit Tests
+
+To run the ChefSpec unit tests, just run the following command in your shell.
+
+```shell
+$ rspec spec/unit/recipes/mode_example_test_spec.rb
+```
+
 ## Integration Tests
 
 To run the test suite, run the following command in the mode_exaple directory.
@@ -43,12 +59,87 @@ $ kitchen verify
 
 ### The test fixture cookbook
 
-This cookbook uses one fixture test cookbook, located in [/test/fixtures/cookbooks/](https://github.com/kevindickerson/mode_example/test/fixtures/cookbooks).
+This cookbook uses one fixture test cookbook, located in [test/fixtures/cookbooks/](https://github.com/kevindickerson/mode_example/tree/master/test/fixtures/cookbooks/mode_example_test).
 
-Locate and read through [test/fixtures/cookbooks/mode_example_test/recipes/file.rb](https://github.com/kevindickerson/mode/test/fixtures/cookbooks/mode_example/test/fixtures/cookbooks/mode_example_test/recipes/file.rb). It just writes out a few files using the `mode` parameter in a few different ways.
+Locate and read through [test/fixtures/cookbooks/mode_example_test/recipes/file.rb](https://github.com/kevindickerson/mode_example/blob/master/test/fixtures/cookbooks/mode_example_test/recipes/file.rb). It just writes out a few files using the `mode` parameter in a few different ways.
 
 ### The integration test suite
 
-Next, look at [/test/integration/mode_example_test/serverspec/mode_example_test_spec.rb](https://github.com/kevindickerson/mode/test/integration/mode_example_test/serverspec/mode_example_test_spec.rb). It simply shows that we have some expectations that the mode we intended was actually the mode we wrote to the file.
+Locate and read through [test/integration/mode_example_test/serverspec/mode_example_test_spec.rb](https://github.com/kevindickerson/mode_example/blob/master/test/integration/mode_example_test/serverspec/mode_example_test_spec.rb). It simply shows that we have some expectations that the mode we intended was actually the mode we wrote to the file.
 
 This shows that there are different ways to send values to the `mode` parameter of your resources. It's a pretty common parameter that you'll use with a lot of basic and very common resources.
+
+## Discussion
+
+### Static Linting
+
+Static linting will catch this problem. If you use Foodcritic, you may inadvertently [trigger Foodcritic rule FC006](http://www.foodcritic.io/#FC006). This is for good reason—you might end up configuring files to have a different modes than you intended them to have.
+
+### Examples of Unintended modes
+
+#### Example 1
+
+This example produces a file with a mode of 1217, not 644. This is because Ruby coerces a Fixnum to octal if it has a leftmost digit of `0`.
+
+```ruby
+file '/home/vagrant/some_file' do
+  owner 'vagrant'
+  group 'vagrant'
+  mode 644
+  action :create
+end
+```
+
+In shell:
+
+```shell
+$ stat -c '%a' /home/vagrant/some_file
+1217
+```
+
+In Ruby:
+
+```ruby
+> 01217 == 655
+=> true
+```
+
+#### Example 2
+
+In this example if the mode is set to `0644`, the mode results to 644, despite the fact that the Fixnum has a leftmost digit of `0`.
+
+```ruby
+file '/home/vagrant/some_file' do
+  owner 'vagrant'
+  group 'vagrant'
+  mode 0644
+  action :create
+end
+```
+
+In shell:
+
+```shell
+$ stat -c '%a' /home/vagrant/some_file
+644
+```
+
+#### Example 3
+
+This example also produces a file with a mode of 644.
+
+```ruby
+file '/home/vagrant/some_file' do
+  owner 'vagrant'
+  group 'vagrant'
+  mode '644'
+  action :create
+end
+```
+
+In shell:
+
+```shell
+$ stat -c '%a' /home/vagrant/some_file
+644
+```
