@@ -7,14 +7,11 @@ driver:
 provisioner:
   name: chef_zero
 
-# Uncomment the following verifier to leverage Inspec instead of Busser (the
-# default verifier)
-# verifier:
-#   name: inspec
-
 platforms:
   - name: ubuntu-14.04
     run_list: apt::default
+  - name: centos-6.7
+  - name: centos-7.1
 
 suites:
   - name: mode_example_test
