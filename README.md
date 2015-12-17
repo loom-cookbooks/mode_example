@@ -4,7 +4,7 @@ This cookbook exists to show Chef users how to use `mode` in their resources. Th
 
 This cookbook doesn't do anything, it just has unit and integration tests, and a text fixture cookbook.
 
-## Supported Platforms
+## Supported platforms
 
 Platform | Version
 ---------|----------
@@ -41,7 +41,7 @@ Notice that `0644` and `0o644` are ways to write *octal* numbers in Ruby. This m
 
 The Chef resource documentation pages don't have a lot of examples to show how to use both Integer or String values with `mode`, so I wrote some tests really quickly to help you understand how to avoid using leading zeroes the wrong way, and to show some examples of how to use special modes (4-digit modes) correctly with String and Integer values.
 
-## Unit Tests
+## Unit tests
 
 To run the ChefSpec unit tests, just run the following command in your shell.
 
@@ -49,9 +49,9 @@ To run the ChefSpec unit tests, just run the following command in your shell.
 $ rspec spec/unit/recipes/mode_example_test_spec.rb
 ```
 
-## Integration Tests
+## Integration tests
 
-To run the test suite, run the following command in the mode_exaple directory.
+To run the test suite, run the following command in the mode_example directory where you have downloaded or cloned this cookbook.
 
 ```shell
 $ kitchen verify
@@ -73,9 +73,9 @@ This shows that there are different ways to send values to the `mode` parameter 
 
 ### Static Linting
 
-Static linting will catch this problem. If you use Foodcritic, you may inadvertently [trigger Foodcritic rule FC006](http://www.foodcritic.io/#FC006). This is for good reason—you might end up configuring files to have a different modes than you intended them to have.
+Static linting will catch problems outlined in this cookbook. If you use Foodcritic, you may inadvertently [trigger Foodcritic rule FC006](http://www.foodcritic.io/#FC006). This is for good reason—you might end up configuring files to have a different modes than you intended them to have.
 
-### Examples of Unintended modes
+### Examples of unintended modes
 
 #### Example 1
 
