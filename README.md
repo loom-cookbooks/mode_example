@@ -6,7 +6,7 @@ This cookbook doesn't do anything, it just has unit and integration tests, and a
 
 ## Overview
 
-If you're new to Ruby, you might be unfamiliar with the difference between strings, integers, and octal numbers. Take a look at the following examples.
+If you're new to Ruby, you might be unfamiliar with how Ruby interprets and coerces strings, integers, and octal numbers. Take a look at the following examples.
 
 ```ruby
 irb(main):001:0> puts 'this is a string'
@@ -29,9 +29,9 @@ irb(main):006:0> puts 0o644
 => nil
 ```
 
-Notice that `0644` and `0o644` are ways to write *octal* numbers in Ruby. This may be a gotcha, since the documentation for quite a few resources—including [`file`](https://docs.chef.io/resource_file.html)—mentions that you can use a string or an integer as a value for your `mode` parameters.
+Notice that `0644` and `0o644` are ways to write *octal* numbers in Ruby. This may be a gotcha, since the documentation for quite a few resources—including [`file`](https://docs.chef.io/resource_file.html)—mentions that you can use a String or a Fixnum as a value for your `mode` parameters.
 
-The Chef resource documentation pages don't have a lot of examples to show how to use both Integer or String values with `mode`, so I wrote some tests really quickly to help you understand how to avoid using leading zeroes the wrong way, and to show some examples of how to use special modes (4-digit modes) correctly with String and Integer values.
+The Chef resource documentation pages don't have a lot of examples to show how to use both Fixnum or String resource parameter values with `mode`. I wrote some tests really quickly to help you understand how to avoid common usage problems. Leading zeroes may result in unexpected values. There are some examples in the tests in this cookbook of how to use special modes (4-digit modes) correctly with both String and Fixnum parameter values.
 
 ## Testing
 
