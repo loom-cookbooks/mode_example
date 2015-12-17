@@ -56,6 +56,7 @@ describe 'mode_example_test::file' do
       it '/home/vagrant/integer_655.txt is in the correct mode' do
         integer_655 = file '/home/vagrant/integer_655.txt'
         expect(integer_655).to be_mode 1217 # this may be unexpected
+        expect(integer_655).to_not be_mode 655 # this may be unexpected
         expect(integer_655).to_not be_mode 01217
         expect(integer_655).to_not be_mode 0o1217 # this may be unexpected
         expect(integer_655).to_not be_mode 0655
