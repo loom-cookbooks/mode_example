@@ -9,5 +9,5 @@ version '1.0.0'
 
 supports 'ubuntu', '14.04'
 
-source_url 'https://github.com/kevindickerson/mode_example'
-issues_url 'https://github.com/kevindickerson/mode_example/issues'
+source_url 'https://github.com/kevindickerson-cookbooks/mode_example'
+issues_url 'https://github.com/kevindickerson-cookbooks/mode_example/issues'
