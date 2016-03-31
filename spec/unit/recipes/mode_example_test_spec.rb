@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe 'mode_example_test::file' do
+describe 'mode_example_test::files' do
   context 'on any platform' do
     let(:chef_run) do
       runner = ChefSpec::ServerRunner.new
@@ -12,25 +12,21 @@ describe 'mode_example_test::file' do
     end
 
     it 'creates some files with varying mode parameters' do
-      expect(chef_run).to create_file('/home/vagrant/string_655.txt')
+      expect(chef_run).to create_file('/home/vagrant/mode_\'655\'.txt')
         .with(mode: '655')
-      expect(chef_run).to create_file('/home/vagrant/string_0655.txt')
+      expect(chef_run).to create_file('/home/vagrant/mode_\'0655\'.txt')
         .with(mode: '0655')
-      expect(chef_run).to create_file('/home/vagrant/string_00655.txt')
+      expect(chef_run).to create_file('/home/vagrant/mode_\'00655\'.txt')
         .with(mode: '00655')
-      expect(chef_run).to create_file('/home/vagrant/string_000655.txt')
-        .with(mode: '000655')
-      expect(chef_run).to create_file('/home/vagrant/string_04755.txt')
+      expect(chef_run).to create_file('/home/vagrant/mode_\'04755\'.txt')
         .with(mode: '04755')
-      expect(chef_run).to create_file('/home/vagrant/fixnum_655.txt')
+      expect(chef_run).to create_file('/home/vagrant/mode_655.txt')
         .with(mode: 655)
-      expect(chef_run).to create_file('/home/vagrant/fixnum_0655.txt')
+      expect(chef_run).to create_file('/home/vagrant/mode_0655.txt')
         .with(mode: 0655)
-      expect(chef_run).to create_file('/home/vagrant/fixnum_00655.txt')
+      expect(chef_run).to create_file('/home/vagrant/mode_00655.txt')
         .with(mode: 00655)
-      expect(chef_run).to create_file('/home/vagrant/fixnum_000655.txt')
-        .with(mode: 000655)
-      expect(chef_run).to create_file('/home/vagrant/fixnum_04755.txt')
+      expect(chef_run).to create_file('/home/vagrant/mode_04755.txt')
         .with(mode: 04755)
     end
   end
