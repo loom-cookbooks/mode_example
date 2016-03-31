@@ -2,6 +2,10 @@
 
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## 1.0.3 (03/31/2016)
+
+- Fix broken link
+
 ## 1.0.2 (03/31/2016)
 
 - Bump patch version for Chef Supermarket

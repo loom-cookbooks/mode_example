@@ -2,11 +2,11 @@
 
 [![Build Status](https://travis-ci.org/kevindickerson-cookbooks/mode_example.svg?branch=master)](https://travis-ci.org/kevindickerson-cookbooks/example) [![Cookbook Version](https://img.shields.io/cookbook/v/mode_example.svg)](https://supermarket.chef.io/cookbooks/mode_example)
 
-This cookbook exists to show Chef users how to use the `mode` property, which is available to several common Chef resources, like `file` and `directory`.
+This cookbook exists to show Chef users how to use the `mode` property, which is available to several common Chef resources, like [file][file] and [directory][directory].
 
 This cookbook is just a long-winded way to show that there are several varying ways to set the `mode` property on a Chef resource.
 
-This cookbook doesn't do anything in real life. It just has unit and integration tests, and a test cookbook to configure the state of a virtual machine. InSpec verifies the configuration.
+This cookbook doesn't actually do anything. It just has unit and integration tests, and a test cookbook to configure the state of a virtual machine. InSpec verifies the configuration.
 
 ## Overview
 
@@ -81,7 +81,7 @@ This shows that there are different ways to send values to the `mode` parameter 
 
 ## Discussion
 
-### Static Linting
+### Static linting
 
 Static linting will catch problems outlined in this cookbook. If you use Foodcritic, you may inadvertently [trigger Foodcritic rule FC006](http://www.foodcritic.io/#FC006). This is for good reason—you might end up configuring files to have a different modes than you intended them to have.
 
@@ -158,3 +158,4 @@ $ stat -c '%a' /home/vagrant/some_file
 [test-file]: https://github.com/kevindickerson-cookbooks/mode_example/blob/master/test/cookbooks/mode_example_test/recipes/file.rb
 [fixnum]: https://github.com/kevindickerson-cookbooks/mode_example/blob/master/test/integration/mode_example/fixnum_mode_spec.rb
 [string]: https://github.com/kevindickerson-cookbooks/mode_example/blob/master/test/integration/mode_example/string_mode_spec.rb
+[directory]: https://docs.chef.io/resource_directory.html
