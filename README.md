@@ -81,7 +81,7 @@ This shows that there are different ways to send values to the `mode` parameter 
 
 ## Discussion
 
-### Static Linting
+### Static linting
 
 Static linting will catch problems outlined in this cookbook. If you use Foodcritic, you may inadvertently [trigger Foodcritic rule FC006](http://www.foodcritic.io/#FC006). This is for good reason—you might end up configuring files to have a different modes than you intended them to have.
 
