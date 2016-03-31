@@ -1,16 +1,18 @@
 # Change Log
-All notable changes to this project will be documented in this file.
+
 This project adheres to [Semantic Versioning](http://semver.org/).
 
-## [0.2.0] - 12/16/2015
-### Added
-- ChefSpec unit tests.
+## 1.0.0 (03/30/2016)
 
-### Changed
-- Added more information to README.md.
-- Updated integration tests.
-- Updated test fixture cookbook.
+- Moves the GitHub repository to the `kevindickerson-cookbooks` organization
+- Adds InSpec integration tests
+- Removes ServerSpec integration tests
+- Adds Travis CI configuration
+- Adds ChefSpec unit tests
+- Adds detail to readme
+- Updates test cookbook
+- Updates change log to use present simple verb tense
 
-## [0.1.0] - 12/16/2015
-### Added
-- Initial release.
+## 0.1.0 (12/16/2015)
+
+- Includes initial release
