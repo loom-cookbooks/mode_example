@@ -2,6 +2,14 @@
 
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## 1.0.2 (03/31/2016)
+
+- Bump patch version for Chef Supermarket
+
+## 1.0.1 (03/31/2016)
+
+- Updates readme with additions and corrections
+
 ## 1.0.0 (03/30/2016)
 
 - Moves the GitHub repository to the [kevindickerson-cookbooks][kevindickerson-cookbooks] organization
