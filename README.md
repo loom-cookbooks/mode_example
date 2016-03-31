@@ -1,5 +1,7 @@
 # mode_example
 
+[![Build Status](https://travis-ci.org/kevindickerson-cookbooks/mode_example.svg?branch=master)](https://travis-ci.org/kevindickerson-cookbooks/example) [![Cookbook Version](https://img.shields.io/cookbook/v/mode_example.svg)](https://supermarket.chef.io/cookbooks/mode_example)
+
 This cookbook exists to show Chef users how to use `mode` in their resources. This is just a really long-winded way to show that there are a few different ways to pass a `mode` parameter value to a resource.
 
 This cookbook doesn't do anything, it just has unit and integration tests, and a text fixture cookbook.
