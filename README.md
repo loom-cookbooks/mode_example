@@ -1,6 +1,6 @@
 # mode_example
 
-[![Build Status](https://travis-ci.org/kevindickerson-cookbooks/mode_example.svg?branch=master)](https://travis-ci.org/kevindickerson-cookbooks/example) [![Cookbook Version](https://img.shields.io/cookbook/v/mode_example.svg)](https://supermarket.chef.io/cookbooks/mode_example)
+[![Build Status](https://travis-ci.org/loom-cookbooks/mode_example.svg?branch=master)](https://travis-ci.org/loom-cookbooks/example) [![Cookbook Version](https://img.shields.io/cookbook/v/mode_example.svg)](https://supermarket.chef.io/cookbooks/mode_example)
 
 This cookbook exists to show Chef users how to use the `mode` property, which is available to several common Chef resources, like [file][file] and [directory][directory].
 
@@ -153,9 +153,10 @@ In shell:
 $ stat -c '%a' /home/vagrant/some_file
 644
 ```
+
 [file]: https://docs.chef.io/resource_file.html
-[test-cookbook]: https://github.com/kevindickerson-cookbooks/mode_example/tree/master/test/cookbooks/mode_example_test
-[test-file]: https://github.com/kevindickerson-cookbooks/mode_example/blob/master/test/cookbooks/mode_example_test/recipes/file.rb
-[fixnum]: https://github.com/kevindickerson-cookbooks/mode_example/blob/master/test/integration/mode_example/fixnum_mode_spec.rb
-[string]: https://github.com/kevindickerson-cookbooks/mode_example/blob/master/test/integration/mode_example/string_mode_spec.rb
+[test-cookbook]: https://github.com/loom-cookbooks/mode_example/tree/master/test/cookbooks/mode_example_test
+[test-file]: https://github.com/loom-cookbooks/mode_example/blob/master/test/cookbooks/mode_example_test/recipes/file.rb
+[fixnum]: https://github.com/loom-cookbooks/mode_example/blob/master/test/integration/mode_example/fixnum_mode_spec.rb
+[string]: https://github.com/loom-cookbooks/mode_example/blob/master/test/integration/mode_example/string_mode_spec.rb
 [directory]: https://docs.chef.io/resource_directory.html

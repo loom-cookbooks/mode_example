@@ -1,20 +1,24 @@
-# Change Log
+# Change log
 
 This project adheres to [Semantic Versioning](http://semver.org/).
 
-## 1.0.3 (03/31/2016)
+## 1.0.4 (05-11-2016)
+
+- Moves the GitHub repository to the [loom-cookbooks][loom-cookbooks] organization
+
+## 1.0.3 (03-31-2016)
 
 - Fix broken link
 
-## 1.0.2 (03/31/2016)
+## 1.0.2 (03-31-2016)
 
 - Bump patch version for Chef Supermarket
 
-## 1.0.1 (03/31/2016)
+## 1.0.1 (03-31-2016)
 
 - Updates readme with additions and corrections
 
-## 1.0.0 (03/30/2016)
+## 1.0.0 (03-30-2016)
 
 - Moves the GitHub repository to the [kevindickerson-cookbooks][kevindickerson-cookbooks] organization
 - Adds InSpec integration tests
@@ -25,8 +29,9 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 - Updates test cookbook
 - Updates change log to use present simple verb tense
 
-## 0.1.0 (12/16/2015)
+## 0.1.0 (12-16-2015)
 
 - Includes initial release
 
 [kevindickerson-cookbooks]: https://github.com/kevindickerson-cookbooks
+[loom-cookbooks]: https://github.com/loom-cookbooks
