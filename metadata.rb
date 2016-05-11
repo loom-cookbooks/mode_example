@@ -5,9 +5,9 @@ license 'Apache 2.0'
 description 'Contains tests to show unexpected behavior for the mode ' \
             'property on a Chef resource'
 long_description IO.read File.join File.dirname(__FILE__), 'README.md'
-version '1.0.3'
+version '1.0.4'
 
 supports 'ubuntu', '14.04'
 
-source_url 'https://github.com/kevindickerson-cookbooks/mode_example'
-issues_url 'https://github.com/kevindickerson-cookbooks/mode_example/issues'
+source_url 'https://github.com/loom-cookbooks/mode_example'
+issues_url 'https://github.com/loom-cookbooks/mode_example/issues'
